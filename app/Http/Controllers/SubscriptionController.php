@@ -14,7 +14,5 @@ class SubscriptionController extends Controller
         $newSub->websiteId = $request->websiteId;
 
         $newSub->save();
-
-        return redirect('admin');
     }
 }

@@ -26,9 +26,9 @@ class PostController extends Controller
         $newPost->save();
         $website = Website::get()->firstWhere('websiteId', '=', $newPost->websiteId);
 
-        MailController::sendMailNotification(UserController::getFollowers($request->websiteId), $website, $newPost);
+        MailController::sendMailNotification(WebsiteController::getFollowers($request->websiteId), $website, $newPost);
 
-        return redirect('/admin');
+        return redirect('/');
     }
 
 

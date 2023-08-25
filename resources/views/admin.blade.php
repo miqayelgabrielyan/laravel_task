@@ -6,39 +6,29 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        form{
+            margin-top: 10px;
+        }
+
+        form input{
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <div>
-        <form action="{{route('setUser')}}" method="post">
+        <form action="{{route('insertAllData')}}" method="post">
             @csrf
-            User
-            <input required type="text" name="userName">
-            <input required type="email" name="email">
-            <input required type="password" name="password">
-            <button>Add</button>
-        </form>
-
-        <form action="{{route('setWebsite')}}" method="post">
-            @csrf
-            Website
-            <input required type="text" name="websiteName">
-            <button>Add</button>
-        </form>
-
-        <form action="{{route('setSubscription')}}" method="post">
-            @csrf
-            Subscription
-            <input required type="number" name="userId">
-            <input required type="number" name="websiteId">
-            <button>Add</button>
+            <button>Insert data</button>
         </form>
 
         <form action="{{route('setPost')}}" method="post">
             @csrf
             Post
-            <input required type="number" name="websiteId">
-            <input required type="text" name="postTitle">
-            <input required type="text" name="postContent">
+            <input placeholder="Website id" required type="number" name="websiteId">
+            <input placeholder="post title" required type="text" name="postTitle">
+            <input placeholder="post content" required type="text" name="postContent">
             <button>Add</button>
         </form>
     </div>

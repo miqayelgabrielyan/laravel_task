@@ -17,19 +17,12 @@ use App\Http\Controllers\WebsiteController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\AdminController;
 
 Route::get('/', function () {
-    return view('home');
-});
-
-Route::get('/', [WebsiteController::class, 'getWebsites']);
-
-Route::get('/admin', function () {
     return view('admin');
 });
 
-Route::post('/admin/setWebsite', [WebsiteController::class, 'setWebsite'])->name('setWebsite');
-Route::post('/admin/setUser', [UserController::class, 'setUser'])->name('setUser');
-Route::post('/admin/setSubscription', [SubscriptionController::class, 'setSubscription'])->name('setSubscription');
 Route::post('/admin/setPost', [PostController::class, 'setPost'])->name('setPost');
 
+Route::post('/admin/insertAllData', [AdminController::class, 'insertAllData'])->name('insertAllData');

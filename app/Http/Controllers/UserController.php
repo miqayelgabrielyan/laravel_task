@@ -15,13 +15,6 @@ class UserController extends Controller
         $newUser->password = $request->password;
         $newUser->save();
 
-        return redirect('admin');
-
     }
 
-    public static function getFollowers($websiteId){
-        $followers = User::join('subscriptions', 'users.userId', '=', 'subscriptions.userId')->where('subscriptions.websiteId', '=', $websiteId)
-            ->get();
-        return $followers;
-    }
 }
