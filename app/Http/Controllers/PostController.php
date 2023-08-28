@@ -28,7 +28,7 @@ class PostController extends Controller
 
         MailController::sendMailNotification(WebsiteController::getFollowers($request->websiteId), $website, $newPost);
 
-        return redirect('/');
+        return 200;
     }
 
 
